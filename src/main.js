@@ -4,7 +4,7 @@ import SectionTwo from './sectionTwo.js'
 import SectionThree from './sectionThree.js'
 import SectionFour from './sectionFour.js'
 
-const Main = ({headerOne, contentOne, headerTwo, contentTwo}) => {
+const Main = () => {
   return (
     <main className="main-container">
       <div className="hoolibg"></div>
