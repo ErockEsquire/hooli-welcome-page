@@ -11,3 +11,274 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+:root {
+  --bg: rgb(37, 186, 255);
+  --bg-accent: #484a4d;
+  --nav-size: 4rem;
+  --border: 1px solid #7ebfff;
+  --border-radius: 8px;
+  --speed: 500ms;
+  font-size: 16px;
+  font-family: 'Signika', sans-serif;
+}
+
+body::-webkit-scrollbar {
+  width: 0.75rem;
+}
+
+body::-webkit-scrollbar-track{
+  background: rgb(212, 212, 212);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: rgb(56, 56, 56);
+  border-radius: 10px;
+  width: 5px;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.navbar {
+  height: var(--nav-size);
+  background-color: var(--bg);
+  padding: 0 5rem 0 1rem;
+  border-bottom: var(--border);
+  position: sticky;
+  top: 0;
+}
+
+.navbar-nav {
+  max-width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.nav-item {
+  width: calc(var(--nav-size) * 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-button {
+  --button-size: calc(var(--nav-size) * .80);
+  width: var(--button-size);
+  height: var(--button-size);
+  background-color: white;
+  border-radius: 25%;
+  /* padding: 2px; */
+  margin: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-button:hover {
+  filter: brightness(1.2);
+  transition: 300ms;
+  color: white;
+  background-color: var(--bg-accent);
+  outline: 0;
+}
+
+.icon-button svg {
+  /* color: rgb(75, 74, 74); */
+  color: rgb(37, 186, 255);
+  height: 30px;
+  width: 30px;
+}
+
+.icon-button:hover svg {
+  color: white;
+}
+
+/* #dropicon:hover {
+  transform: rotate(90deg);
+} */
+
+/* .icon-button:last-child:hover svg{
+  transform: rotate(90deg);
+  transition: 600ms;
+} */
+
+.logo {
+  margin-right: auto;
+  height: 90px;
+  width: 115px;
+  color: white;
+}
+
+.dropmenu {
+  position: absolute;
+  top: 4rem;
+  right: 4rem;
+  width: 15rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 1rem;
+  background-color:rgb(37, 186, 255);
+  border-radius: 10px;
+  /* border: var(--border); */
+}
+
+.dropitem {
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
+  color: white;
+  padding: 5px;
+  margin-top: 10px;
+}
+
+.dropitem:hover {
+  transition: 600ms;
+  background-color: rgb(33, 169, 233);
+}
+
+
+/* .icon-left {
+  margin-right: auto;
+} */
+
+.hoolibg {
+  background-image: url('./images/hooli-landing.png');
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  height: 600px;
+}
+
+.sectionOne {
+  padding: 1rem 3rem;
+  background-color: #ffde00;
+  color: white;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.people svg {
+  color: white;
+  width: 5rem;
+  height: 5rem;
+  margin-top: 1rem;
+}
+
+.gavinbg {
+  background-image: url('./images/gavin-construction.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  height: 600px;
+}
+
+.sectionTwo {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  font-size: 1.25rem;
+  height: 20rem;
+  background-color: rgb(37, 36, 36);
+  color: white;
+}
+
+.section-two-content {
+  width: 50%;
+  padding: 1rem 3rem;
+}
+
+.section-two-picture {
+  background-image: url('./images/gavin-endframe.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 50%;
+}
+
+.sectionThree {
+  padding: 1rem 3rem;
+  background-color: #ffde00;
+  color: white;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.world svg {
+  color: white;
+  width: 5rem;
+  height: 5rem;
+  margin-top: 1rem;
+}
+
+.hooliend {
+  background: url('./images/hooli-end.png') no-repeat center;
+  background-size: contain;
+  max-width: 100%;
+  height: 0;
+  padding-top: 53.90%;
+}
+
+.sectionFour {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  font-size: 1.25rem;
+  height: 15rem;
+  background-color: rgb(37, 186, 255);
+}
+
+.portrait {
+  margin: 1rem;
+  height: 10rem;
+  width: 10rem;
+  border-radius: 50%;
+  display: inline-block;
+  background-image: url('./images/gavin-portrait.jpg');
+  background-size: cover;
+  background-position: center;
+  object-fit: cover;
+  margin-left: 3rem;
+}
+
+.signature {
+  background-image: url('./images/signature.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 20rem;
+  height: 10rem;
+  margin-left: 2rem;
+  margin-right: 3rem;
+}
+
+.menu-primary-enter {
+  position: absolute;
+  transform: translate(-110%);
+}
+
+.menu-primary-enter-active {
+  transform: translateX(0%);
+  transition: all var(--speed) ease;
+}
+
+.menu-primary-exit {
+  position: absolute;
+}
+
+.menu-primary-exit-active {
+  transform: translateX(-110%);
+  transition: all var(--speed) ease;
+}

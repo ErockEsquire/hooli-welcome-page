@@ -1,26 +1,93 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { ReactComponent as ArrowLeft } from './icons/arrow-left.svg';
+import { ReactComponent as ArrowDown } from './icons/arrow-down.svg';
+import { ReactComponent as Box } from './icons/box.svg';
+import { ReactComponent as Chat } from './icons/comments.svg';
+import { ReactComponent as Hooli } from './icons/hooli.svg';
+import { ReactComponent as Lotus } from './icons/lotus.svg';
+import { ReactComponent as About } from './icons/about.svg';
+import { ReactComponent as Pen } from './icons/pen.svg';
+import { ReactComponent as Paperplane } from './icons/paper-plane.svg';
+import Main from './main.js';
+
+import React, { useState } from 'react';
+// import { CSSTransition } from 'react-transition-group';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar>
+        <Logo icon={<Hooli />} />
+        <NavItem icon={<Box />} />
+        <NavItem icon={<Chat />} />
+        <NavItem icon={<ArrowDown />}>
+          <Dropmenu />
+        </NavItem>
+      </Navbar>
+      <Main />
     </div>
   );
 }
 
+const Navbar = (props) => {
+  return (
+    <nav className="navbar">
+      <ul className="navbar-nav">{ props.children }</ul>
+    </nav>
+  );
+}
+
+const NavItem = (props) => {
+
+  const [open, setOpen] = useState(false);
+
+  return (
+    <li className="nav-item">
+      <a href="#" className="icon-button" onClick={() => setOpen(!open)}>
+        { props.icon }
+      </a>
+      {open && props.children}
+    </li>
+  );
+}
+
+const Logo = (props) => {
+  return (
+    <li className="logo">
+      { props.icon }
+    </li>
+  )
+}
+
+function Dropmenu() {
+
+  function Dropitem(props) {
+    return (
+      <a href="#" className="dropitem">
+        <span className="icon-left">{props.leftIcon}</span>
+        {props.children}
+        <span className="icon-button">{props.rightIcon}</span>
+      </a>
+    )
+  }
+
+  return (
+    <div className="dropmenu">
+        <div className="menu">
+          <Dropitem rightIcon={<Lotus />}>Our Philosophy</Dropitem>
+          <Dropitem rightIcon={<About />}>About Us</Dropitem>
+          <Dropitem leftIcon={<ArrowLeft />} rightIcon={<Pen />}>Email Us</Dropitem>
+        </div>
+    </div>
+  )
+}
+
 export default App;
+
+// const [activeMenu, setActiveMenu] = useState('main');
+// <CSSTransition in={activeMenu === 'main'} 
+//       unmountOnExit 
+//       timeout={500}
+//       className="menu-primary"
+//       ></CSSTransition>
+
+//       </CSSTransition>
