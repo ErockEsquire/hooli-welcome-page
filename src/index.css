@@ -78,7 +78,6 @@ a {
   height: var(--button-size);
   background-color: white;
   border-radius: 25%;
-  /* padding: 2px; */
   margin: 2px;
   display: flex;
   align-items: center;
@@ -90,11 +89,9 @@ a {
   transition: 300ms;
   color: white;
   background-color: var(--bg-accent);
-  outline: 0;
 }
 
 .icon-button svg {
-  /* color: rgb(75, 74, 74); */
   color: rgb(37, 186, 255);
   height: 30px;
   width: 30px;
@@ -104,14 +101,16 @@ a {
   color: white;
 }
 
-/* #dropicon:hover {
-  transform: rotate(90deg);
-} */
-
-/* .icon-button:last-child:hover svg{
-  transform: rotate(90deg);
+.dropitem:hover .icon-button{
   transition: 600ms;
-} */
+  background-color: var(--bg-accent);
+  color: white;
+}
+
+.dropitem:hover .icon-button svg{
+  transition: 600ms;
+  color: white;
+}
 
 .logo {
   margin-right: auto;
@@ -131,7 +130,6 @@ a {
   padding: 1rem;
   background-color:rgb(37, 186, 255);
   border-radius: 10px;
-  /* border: var(--border); */
 }
 
 .dropitem {
@@ -144,16 +142,6 @@ a {
   padding: 5px;
   margin-top: 10px;
 }
-
-.dropitem:hover {
-  transition: 600ms;
-  background-color: rgb(33, 169, 233);
-}
-
-
-/* .icon-left {
-  margin-right: auto;
-} */
 
 .hoolibg {
   background-image: url('./images/hooli-landing.png');
