@@ -41,7 +41,7 @@ class Navbar extends React.Component {
   NavItem = (props) => {
     return (
       <li className="nav-item">
-        <a href="#" className="icon-button" onClick={props.clickToggle} onBlur={props.clickToggle}>
+        <a href="#" className="icon-button">
           { props.icon }
         </a>
         {this.state.open && props.children}
