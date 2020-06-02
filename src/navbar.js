@@ -7,12 +7,9 @@ import { ReactComponent as Pen } from './icons/pen.svg';
 import { ReactComponent as Box } from './icons/box.svg';
 import { ReactComponent as Chat } from './icons/comments.svg';
 import { ReactComponent as Hooli } from './icons/hooli.svg';
+import { CSSTransition } from 'react-transition-group';
 
 class Navbar extends React.Component {
-
-  
-
-
   state = {
     open: false
   }
@@ -22,14 +19,14 @@ class Navbar extends React.Component {
       this.setState({
         open: false
       })
-      event.target.style.transform = "rotate(90deg)"
+      // event.target.style.transform = "rotate(90deg)"
       event.target.style.transition = "600ms"
     }
     else if(!this.state.open) {
       this.setState({
         open: true
       })
-      event.target.style.transform = "rotate(-90deg)"
+      // event.target.style.transform = "rotate(-90deg)"
       event.target.style.transition = "600ms"
     }
   }
@@ -38,13 +35,13 @@ class Navbar extends React.Component {
     this.setState({
       open: false
     })
-    event.target.style.transform = "rotate(90deg)"
+    // event.target.style.transform = "rotate(90deg)"
   }
 
   NavItem = (props) => {
     return (
       <li className="nav-item">
-        <a href="#" className="icon-button" onClick={props.clickToggle} onBlur={props.clickClose}>
+        <a href="#" className="icon-button" onClick={props.clickToggle} onBlur={props.clickToggle}>
           { props.icon }
         </a>
         {this.state.open && props.children}
