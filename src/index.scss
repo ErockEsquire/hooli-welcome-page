@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -13,7 +13,7 @@ code {
 }
 
 :root {
-  --bg: rgb(37, 186, 255);
+  --bg: #4dadfe;
   --bg-accent: #484a4d;
   --nav-size: 4rem;
   --border: 1px solid #7ebfff;
@@ -277,6 +277,14 @@ a {
   background-size: cover;
   background-repeat: no-repeat;
   width: 50vw;
+}
+
+.walls {
+  background-image: url('./images/walls.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100vh;
 }
 
 .sectionThree {

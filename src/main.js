@@ -15,8 +15,9 @@ const Main = () => {
       <div className="gavinbg"></div>
       <SectionTwo 
         headerOne="Endframe is now Hooli" 
-        contentOne="Endframe has been dominating the middle-out compression space, with recent deals totaling over $30 million and serving clients such as Intersite Content LLC and energy-drink company Homicide. Through its revolutionary compression algorithm, the platform provides access to files at a drastically reduced size. Endframe CEO Marc Howard has stated Endframe “looks forward to integrating with Hooli’s innovative and world-changing technology that truly makes the world a better place.”"
+        contentOne="Endframe has been dominating the middle-out compression space, with recent deals totaling over $30 million and serving clients such as energy-drink company Homicide. Endframe CEO Marc Howard has stated Endframe “looks forward to integrating with Hooli’s innovative and world-changing technology that truly makes the world a better place.”"
       />
+      <div className="walls"></div>
       <SectionThree 
         headerOne="Hooli isn't just about innovation. Hooli is about change."
       />
