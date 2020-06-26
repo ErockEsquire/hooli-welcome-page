@@ -1,91 +1,53 @@
-import React from 'react';
-import { ReactComponent as Lotus } from './icons/lotus.svg';
-import { ReactComponent as About } from './icons/about.svg';
 import { ReactComponent as ArrowLeft } from './icons/arrow-left.svg';
-import { ReactComponent as ArrowDown } from './icons/arrow-down.svg';
-import { ReactComponent as Pen } from './icons/pen.svg';
 import { ReactComponent as Box } from './icons/box.svg';
 import { ReactComponent as Chat } from './icons/comments.svg';
 import { ReactComponent as Hooli } from './icons/hooli.svg';
-import { CSSTransition } from 'react-transition-group';
+import { ReactComponent as Lotus } from './icons/lotus.svg';
+import { ReactComponent as About } from './icons/about.svg';
+import { ReactComponent as Pen } from './icons/pen.svg';
 
-class Navbar extends React.Component {
-  state = {
-    open: false
-  }
-  
-  clickToggle = (event) => {
-    if(this.state.open) {
-      this.setState({
-        open: false
-      })
-      // event.target.style.transform = "rotate(90deg)"
-      event.target.style.transition = "600ms"
-    }
-    else if(!this.state.open) {
-      this.setState({
-        open: true
-      })
-      // event.target.style.transform = "rotate(-90deg)"
-      event.target.style.transition = "600ms"
-    }
-  }
 
-  clickClose = (event) => {
-    this.setState({
-      open: false
-    })
-    // event.target.style.transform = "rotate(90deg)"
-  }
+import React, { useState } from 'react';
 
-  NavItem = (props) => {
-    return (
-      <li className="nav-item">
-        <a href="#" className="icon-button">
-          { props.icon }
-        </a>
-        {this.state.open && props.children}
-      </li>
-    );
-  }
-
-  render() {
-    return (
-      <nav className="navbar">
-        <ul className="navbar-nav">
-          <Logo icon={<Hooli />} />
-          <this.NavItem icon={<Box />} />
-          <this.NavItem icon={<Chat />} />
-          <this.NavItem icon={this.state.open ? <ArrowDown />:<ArrowLeft />} clickToggle={this.clickToggle} clickClose={this.clickClose}>
-            <Dropmenu />
-          </this.NavItem>
-        </ul>
-      </nav>
-    )
-  }
-}
-
-function Dropmenu() {
-    
-  function Dropitem(props) {
-    return (
-      <a href="#" className="dropitem">
-        <span className="icon-left">{props.leftIcon}</span>
-        {props.children}
-        <span className="icon-button">{props.rightIcon}</span>
-      </a>
-    )
-  }
+export default function Navbar() {
 
   return (
-    <div className="dropmenu">
-        <div className="menu">
-          <Dropitem rightIcon={<Lotus />}>Our Philosophy</Dropitem>
-          <Dropitem rightIcon={<About />}>About Us</Dropitem>
-          <Dropitem leftIcon={<ArrowLeft />} rightIcon={<Pen />}>Email Us</Dropitem>
-        </div>
-    </div>
-  )
+    <nav className="navbar">
+      <ul className="navbar-nav">
+        <Logo icon={<Hooli />} />
+        <NavItem icon={<Box />} />
+        <NavItem icon={<Chat />} />
+        <NavDropItem icon={<ArrowLeft />}>
+          <Dropmenu />
+        </NavDropItem>
+      </ul>
+    </nav>
+  );
+}
+
+const NavItem = (props) => {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <li className="nav-item">
+      <span href="#" className="icon-button" onClick={() => setOpen(!open)}>
+        { props.icon }
+      </span>
+    </li>
+  );
+}
+
+const NavDropItem = (props) => {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <li className="nav-item">
+      <span className={open ? 'icon-button dropdown':'icon-button dropleft'} onClick={() => setOpen(!open)} onBlur={() => setOpen(false)}>
+        { props.icon }
+      </span>
+      <Dropmenu open={open}/>
+    </li>
+  );
 }
 
 const Logo = (props) => {
@@ -96,4 +58,25 @@ const Logo = (props) => {
   )
 }
 
-export default Navbar;
+function Dropmenu({ open }) {
+
+  function Dropitem(props) {
+    return (
+      <span className="dropitem">
+        <span className="icon-left">{props.leftIcon}</span>
+        {props.children}
+        <span className="icon-button">{props.rightIcon}</span>
+      </span>
+    )
+  }
+
+  return (
+    <div className={open ? "dropmenu open":"dropmenu closed"}>
+        <div className="menu">
+          <Dropitem rightIcon={<Lotus />}>Our Philosophy</Dropitem>
+          <Dropitem rightIcon={<About />}>About Hooli</Dropitem>
+          <Dropitem leftIcon={<ArrowLeft />} rightIcon={<Pen />}>Email Us</Dropitem>
+        </div>
+    </div>
+  )
+}

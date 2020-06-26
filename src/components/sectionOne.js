@@ -1,8 +1,8 @@
 import React from 'react';
-import { ReactComponent as People } from './icons/people.svg';
+import { ReactComponent as People } from '../icons/people.svg';
 
 
-const SectionOne = ({headerOne, contentOne, headerTwo, contentTwo}) => {
+const SectionOne = ({headerOne, contentOne}) => {
   return (
     <div className="sectionOne">
       <span className="people"><People /></span>

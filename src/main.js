@@ -1,8 +1,8 @@
 import React from 'react';
-import SectionOne from './sectionOne.js'
-import SectionTwo from './sectionTwo.js'
-import SectionThree from './sectionThree.js'
-import SectionFour from './sectionFour.js'
+import SectionOne from './components/sectionOne.js'
+import SectionTwo from './components/sectionTwo.js'
+import SectionThree from './components/sectionThree.js'
+import Footer from './components/footer.js'
 
 const Main = () => {
   return (
@@ -21,7 +21,7 @@ const Main = () => {
         headerOne="Hooli isn't just about innovation. Hooli is about change."
       />
       <div className="hooliend"></div>
-      <SectionFour 
+      <Footer 
         quote="I don't want to live in a world, where someone else is making the world a better place than we are."
         name="Gavin Belson"
       />

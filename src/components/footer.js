@@ -1,8 +1,8 @@
 import React from 'react';
 
-const SectionFour = ({quote, name}) => {
+const Footer = ({quote, name}) => {
   return (
-    <div className="sectionFour">
+    <div className="footer">
       <span className="portrait"></span>
       <div className="quote">
         <p>"{quote}"</p>
@@ -13,4 +13,4 @@ const SectionFour = ({quote, name}) => {
   )
 }
 
-export default SectionFour;
+export default Footer;

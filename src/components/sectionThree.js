@@ -1,5 +1,5 @@
 import React from 'react';
-import { ReactComponent as World} from './icons/world.svg';
+import { ReactComponent as World} from '../icons/world.svg';
 
 const SectionThree = ({headerOne}) => {
   return (
