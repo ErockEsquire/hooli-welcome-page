@@ -3,11 +3,17 @@ import SectionOne from './components/sectionOne.js'
 import SectionTwo from './components/sectionTwo.js'
 import SectionThree from './components/sectionThree.js'
 import Footer from './components/footer.js'
+import { ReactComponent as Hooli } from './icons/hooli.svg';
 
 const Main = () => {
   return (
     <main className="main-container">
-      <div className="hoolibg"></div>
+      <div className="hoolibg">
+        <div>
+          <Hooli />
+          <h3>M A K I N G &nbsp; T H E &nbsp; W O R L D &nbsp; A &nbsp; B E T T E R &nbsp; P L A C E</h3>
+        </div>
+      </div>
       <SectionOne 
         headerOne="Hooli isn't about software, Hooli is about people."
         contentOne="Our products are more than hardware or software. We're more than the chat, mail, search and phone that's crowned Hooli as the most respected brand in the world."

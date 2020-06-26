@@ -227,12 +227,27 @@ a {
 }
 
 .hoolibg {
-  background-image: url('./images/hoolibg.png');
+  background-image: url('./images/splash.jpg');
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
-  width: 100%;
+  width: 100vw;
   height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  svg {
+    width: 20vw;
+  }
+  h3 {
+    margin: 0;
+  }
 }
 
 .sectionOne {
@@ -254,8 +269,9 @@ a {
   background-image: url('./images/gavin-construction.jpg');
   background-size: cover;
   background-attachment: fixed;
-  width: 100%;
-  height: 600px;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
 }
 
 .sectionTwo {
@@ -284,6 +300,7 @@ a {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-position: center;
   height: 100vh;
 }
 
@@ -318,6 +335,7 @@ a {
   font-size: 1.25rem;
   height: 15rem;
   background-color: rgb(37, 186, 255);
+  padding: 3vh 3vw;
 }
 
 .portrait {
@@ -330,7 +348,6 @@ a {
   background-size: cover;
   background-position: center;
   object-fit: cover;
-  margin-left: 3vw;
 }
 
 .signature {
@@ -340,7 +357,6 @@ a {
   width: 20rem;
   height: 10rem;
   margin-left: 2rem;
-  margin-right: 3rem;
 }
 
 .display-enter {
@@ -366,3 +382,31 @@ a {
   transition: .3s ease-in-out;
   transition: opacity 300ms, transform 300ms;
 }
+
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 1.25rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+  .hoolibg {
+    svg {
+      width: 30vw;
+    }
+    h3 {
+      font-size: 3vw;
+    }
+  }
+
+  .footer {
+    height: initial;
+    flex-direction: column;
+    p, h2 {
+      font-size: .75rem;
+    }
+    .portrait {
+      min-height: 10rem;
+    }
+  }
+} 
