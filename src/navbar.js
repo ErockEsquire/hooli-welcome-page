@@ -75,7 +75,7 @@ function Dropmenu({ open }) {
         <div className="menu">
           <Dropitem rightIcon={<Lotus />}>Our Philosophy</Dropitem>
           <Dropitem rightIcon={<About />}>About Hooli</Dropitem>
-          <Dropitem leftIcon={<ArrowLeft />} rightIcon={<Pen />}>Email Us</Dropitem>
+          <Dropitem rightIcon={<Pen />}>Email Us</Dropitem>
         </div>
     </div>
   )
